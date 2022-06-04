@@ -31,7 +31,7 @@ void main()
     
     k=(k+1.)/2.;
     
-    float fog=1.-clamp((vPosition.z-playHead*2.)/12.,0.,1.);
+    float fog=1.-clamp((vPosition.z-2.-playHead*2.)/12.,0.,1.);
     
     vec3 finalCol=mix(col1,col2,k);
     
