@@ -35,7 +35,9 @@ let extrudeSettings = {
 };
 let extrudeGeo = new THREE.ExtrudeBufferGeometry(shape, extrudeSettings);
 const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
-
+let normMat = new THREE.MeshNormalMaterial({
+    side: THREE.DoubleSide,
+});
 // Material
 const material = new THREE.ShaderMaterial({
     uniforms: {
@@ -47,7 +49,7 @@ const material = new THREE.ShaderMaterial({
 });
 
 // Mesh
-const mesh = new THREE.Mesh(extrudeGeo, material);
+const mesh = new THREE.Mesh(extrudeGeo, normMat);
 scene.add(mesh);
 
 /**
