@@ -27,6 +27,13 @@ shape.moveTo(0.5, -0.5);
 shape.moveTo(-0.5, -0.5);
 shape.moveTo(-0.5, 0.5);
 shape.moveTo(0.5, 0.5);
+
+let extrudeSettings = {
+    steps: 2,
+    depth: 16,
+    bevelEnabled: true,
+};
+let extrudeGeo = new THREE.ExtrudeBufferGeometry(shape, extrudeSettings);
 const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
 
 // Material
@@ -40,7 +47,7 @@ const material = new THREE.ShaderMaterial({
 });
 
 // Mesh
-const mesh = new THREE.Mesh(geometry, material);
+const mesh = new THREE.Mesh(extrudeGeo, material);
 scene.add(mesh);
 
 /**
