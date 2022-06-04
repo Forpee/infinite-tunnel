@@ -11,5 +11,23 @@ void main()
     float threshold=.005;
     
     float fline_a=abs(fline);
+    
+    float k=0.;
+    float sk=0.;
+    
+    if(fline<0.){
+        k=-1.;
+    }else{
+        k=1.;
+    }
+    
+    if(fline_a<threshold){
+        sk=(threshold-fline_a)/threshold;
+        
+        k=k*(1.-sk)+fline_a*sk;
+    }
+    
+    k=(k+1.)/2.;
+    
     gl_FragColor=vec4(vUv,1.,1.);
 }
