@@ -23,10 +23,10 @@ const scene = new THREE.Scene();
 // Geometry
 let shape = new THREE.Shape();
 shape.moveTo(0.5, 0.5);
-shape.moveTo(0.5, -0.5);
-shape.moveTo(-0.5, -0.5);
-shape.moveTo(-0.5, 0.5);
-shape.moveTo(0.5, 0.5);
+shape.lineTo(0.5, -0.5);
+shape.lineTo(-0.5, -0.5);
+shape.lineTo(-0.5, 0.5);
+shape.lineTo(0.5, 0.5);
 
 let extrudeSettings = {
     steps: 2,
@@ -51,6 +51,8 @@ const material = new THREE.ShaderMaterial({
 // Mesh
 const mesh = new THREE.Mesh(extrudeGeo, normMat);
 scene.add(mesh);
+
+mesh.position.z = -1;
 
 /**
  * Sizes
