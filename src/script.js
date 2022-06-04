@@ -49,7 +49,7 @@ const material = new THREE.ShaderMaterial({
 });
 
 // Mesh
-const mesh = new THREE.Mesh(extrudeGeo, normMat);
+const mesh = new THREE.Mesh(extrudeGeo, material);
 scene.add(mesh);
 
 mesh.position.z = -1;
@@ -84,7 +84,7 @@ window.addEventListener('resize', () => {
 
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-camera.position.set(2, 2, -1);
+camera.position.set(0, 0, -1);
 scene.add(camera);
 
 // Controls
