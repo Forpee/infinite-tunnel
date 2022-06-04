@@ -23,10 +23,18 @@ const scene = new THREE.Scene();
 // Geometry
 let shape = new THREE.Shape();
 shape.moveTo(0.5, 0.5);
-shape.lineTo(0.5, -0.5);
-shape.lineTo(-0.5, -0.5);
-shape.lineTo(-0.5, 0.5);
-shape.lineTo(0.5, 0.5);
+// shape.lineTo(0.5, -0.5);
+// shape.lineTo(-0.5, -0.5);
+// shape.lineTo(-0.5, 0.5);
+// shape.lineTo(0.5, 0.5);
+let n = 10;
+for (let i = 0; i <= n; i++) {
+    let theta = 2 * Math.PI / n;
+    let x = Math.sin(theta);
+    let y = Math.cos(theta);
+    shape.lineTo(x, y);
+
+}
 
 let extrudeSettings = {
     steps: 2,
