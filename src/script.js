@@ -26,18 +26,19 @@ let shape = new THREE.Shape();
 // shape.lineTo(0.5, -0.5);
 // shape.lineTo(-0.5, -0.5);
 // shape.lineTo(-0.5, 0.5);
-// shape.lineTo(0.5, 0.5);
-let n = 10;
+shape.moveTo(0.0, 0.2);
+let n = 100;
 for (let i = 0; i <= n; i++) {
     let theta = 2 * Math.PI * i / n;
-    let x = Math.sin(theta);
-    let y = Math.cos(theta);
+    let r = 0.2 + 0.2 * Math.sin(2 * theta * 1) ** 2;
+    let x = r * Math.sin(theta);
+    let y = r * Math.cos(theta);
     shape.lineTo(x, y);
 
 }
 
 let extrudeSettings = {
-    steps: 2,
+    steps: 150,
     depth: 40,
     bevelEnabled: false,
 };
@@ -54,7 +55,8 @@ const material = new THREE.ShaderMaterial({
     },
     vertexShader: vertexShader,
     fragmentShader: fragmentShader,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
+    wireframe: true,
 });
 
 // Mesh
