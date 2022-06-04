@@ -1,4 +1,5 @@
 uniform float uTime;
+varying vec3 vPosition;
 
 varying vec2 vUv;
 
@@ -28,6 +29,8 @@ void main()
     }
     
     k=(k+1.)/2.;
+    
+    float fog=1.-clamp(VPos)
     
     gl_FragColor=vec4(vUv,1.,1.);
 }
