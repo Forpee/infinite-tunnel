@@ -42,6 +42,7 @@ let normMat = new THREE.MeshNormalMaterial({
 const material = new THREE.ShaderMaterial({
     uniforms: {
         uTime: { value: 0 },
+        playHead: { value: 0 },
     },
     vertexShader: vertexShader,
     fragmentShader: fragmentShader,
@@ -111,9 +112,11 @@ const tick = () => {
 
     // Get elapsedtime
     const elapsedTime = clock.getElapsedTime();
-
+    let playHead = elapsedTime % 4;
+    mesh.position.z = -1 - playHead * 2;
     // Update uniforms
     material.uniforms.uTime.value = elapsedTime;
+    material.uniforms.playHead.value = playHead;
 
     // Render
     renderer.render(scene, camera);

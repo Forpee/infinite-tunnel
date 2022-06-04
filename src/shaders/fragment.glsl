@@ -1,4 +1,5 @@
 uniform float uTime;
+uniform float playHead;
 varying vec3 vPosition;
 
 varying vec2 vUv;
