@@ -31,7 +31,7 @@ shape.moveTo(0.5, 0.5);
 let extrudeSettings = {
     steps: 2,
     depth: 16,
-    bevelEnabled: true,
+    bevelEnabled: false,
 };
 let extrudeGeo = new THREE.ExtrudeBufferGeometry(shape, extrudeSettings);
 const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
