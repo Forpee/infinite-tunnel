@@ -10,5 +10,6 @@ void main()
     float fline=sin(vUv.y*6.*pi);
     float threshold=.005;
     
+    float fline_a=abs(fline);
     gl_FragColor=vec4(vUv,1.,1.);
 }

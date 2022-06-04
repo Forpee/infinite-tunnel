@@ -30,7 +30,7 @@ shape.lineTo(0.5, 0.5);
 
 let extrudeSettings = {
     steps: 2,
-    depth: 16,
+    depth: 40,
     bevelEnabled: false,
 };
 let extrudeGeo = new THREE.ExtrudeBufferGeometry(shape, extrudeSettings);
