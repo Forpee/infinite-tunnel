@@ -22,7 +22,11 @@ const scene = new THREE.Scene();
  */
 // Geometry
 let shape = new THREE.Shape();
-
+shape.moveTo(0.5, 0.5);
+shape.moveTo(0.5, -0.5);
+shape.moveTo(-0.5, -0.5);
+shape.moveTo(-0.5, 0.5);
+shape.moveTo(0.5, 0.5);
 const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
 
 // Material
