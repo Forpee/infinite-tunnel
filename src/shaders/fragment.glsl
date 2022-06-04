@@ -30,7 +30,11 @@ void main()
     
     k=(k+1.)/2.;
     
-    float fog=1.-clamp(VPos)
+    float fog=1.-clamp(vPosition.z/12.,0.,1.);
     
-    gl_FragColor=vec4(vUv,1.,1.);
+    vec3 finalCol=mix(col1,col2,k);
+    
+    finalCol=mix(vec3(0.),finalCol,fog);
+    
+    gl_FragColor=vec4(finalCol,1.);
 }
